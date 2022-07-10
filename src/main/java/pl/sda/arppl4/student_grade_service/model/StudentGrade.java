@@ -4,6 +4,8 @@ package pl.sda.arppl4.student_grade_service.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import pl.sda.arppl4.student_grade_service.model.dto.StudentDTO;
+import pl.sda.arppl4.student_grade_service.model.dto.StudentGradeDTO;
 
 import javax.persistence.*;
 
@@ -34,5 +36,12 @@ public class StudentGrade {
     @ToString.Exclude
     private StudentSubject studentSubject;
 
+    public StudentGradeDTO maptToStundentGradeDTO() {
+        return new StudentGradeDTO(
+                id,
+                value
+
+        );
     }
+}
 

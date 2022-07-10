@@ -31,5 +31,16 @@ public class StudentController {
         return list;
     }
 
+    @DeleteMapping("/delete/{identifier}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteStudent(@PathVariable(name = "identifier") Long identyfikator) {
+        log.info("Wywołano usunięcie studenta: " + identyfikator);
+        studentService.deleteById(identyfikator);
+    }
 
+    @PatchMapping("/update")
+    public void updateStudent(@RequestBody Student student) {
+        log.info("Wywołano aktualizację studenta: " + student);
+        studentService.updateStudent(student);
+    }
 }

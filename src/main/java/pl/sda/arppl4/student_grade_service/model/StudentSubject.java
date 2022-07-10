@@ -4,6 +4,8 @@ package pl.sda.arppl4.student_grade_service.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import pl.sda.arppl4.student_grade_service.model.dto.StudentGradeDTO;
+import pl.sda.arppl4.student_grade_service.model.dto.StudentSubjectDTO;
 import pl.sda.arppl4.student_grade_service.repository.StudentSubjectRepository;
 
 import javax.persistence.*;
@@ -28,8 +30,12 @@ public class StudentSubject {
     private Set<StudentGrade> studentGrades;
 
 
+    public StudentSubjectDTO maptToStundentSubjectDTO() {
+        return new StudentSubjectDTO(
+                id,
+                subject
 
-
-
+        );
     }
+}
 

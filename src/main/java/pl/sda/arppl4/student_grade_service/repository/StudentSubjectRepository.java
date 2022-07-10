@@ -5,4 +5,5 @@ import pl.sda.arppl4.student_grade_service.model.StudentGrade;
 import pl.sda.arppl4.student_grade_service.model.StudentSubject;
 
 public interface StudentSubjectRepository extends JpaRepository<StudentSubject, Long> {
+    public boolean existsBySubject(String subject);
 }
